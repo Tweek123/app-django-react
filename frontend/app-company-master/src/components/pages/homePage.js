@@ -23,7 +23,7 @@ class HomePage extends React.Component {
       }
 
 
-    componentWillMount() {
+    componentDidMount() {
         this.props.dispatch(getUsers())
     }
 
@@ -45,11 +45,11 @@ class HomePage extends React.Component {
                         {this.props.errors.loginError?<Message  className={'login-form__login-error'} type="error" description="Wrong username or password" />: false}
                         <FormGroup>
                           <ControlLabel>Username</ControlLabel>
-                          <FormControl name="name" />
+                          <FormControl name="name"/>
                         </FormGroup>
                         <FormGroup>
                           <ControlLabel>Password</ControlLabel>
-                          <FormControl name="password" type="password" />
+                          <FormControl name="password" type="password"/>
                         </FormGroup>
                         <FormGroup>
                           <ButtonToolbar>

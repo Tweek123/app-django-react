@@ -175,19 +175,42 @@ function* requestAuth(action) {
 
 
 
-function* requestGetClientData(data) {
-  console.log(data);
-  console.log('request_begin');
+function* requestGetClientData(action) {
+  console.log(action);
   try {
     const data = yield call(() => {
-      return fetch('http://127.0.0.1:8000/getClientData/')
-              .then(res => res.json())
+      return fetch('http://127.0.0.1:8000/getClientData/', {
+        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        mode: 'cors', // no-cors, *cors, same-origin
+        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: 'same-origin', // include, *same-origin, omit
+        headers: {
+          'Content-Type': 'application/json'
+          // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        redirect: 'follow', // manual, *follow, error
+        referrerPolicy: 'no-referrer', // no-referrer, *client
+        body: JSON.stringify(
+          {
+            key: 1,
+            timeStart: action.range[0],
+            timeEnd: action.range[1]
+          }
+          
+          ) // body data type must match "Content-Type" header
+        }).then(res => {
+
+        return res.json() 
+        })
+      
+      .then(data => {
+              console.log(data);
+      })
       }
     );
-    console.log(data);
-    console.log('request_Success');
-    yield put({ type: 'LOAD_CLIENT_DATA', data: data});
   } catch (error) {
+    console.log('Err');
+    yield put({ type: 'LOGIN_ERR'});
 
   }
 }

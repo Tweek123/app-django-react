@@ -12,7 +12,7 @@ import createHistory from 'history/createBrowserHistory';
 import {rootSaga} from './sagas/sagas'
 import './css/main.css'
 import  UsersPage  from "../src/components/pages/usersPage";
-
+import { getClientData } from './actions/actions'
 function homePage() {  
 
   return <HomePage/>
@@ -36,7 +36,11 @@ const initialState = {
 }
 
 
+
+
+
 let foundIndex, newUser, emptyUser;
+
 function reducer(state = initialState, action) {
   switch (action.type) {
     case "ADD_USER":  
@@ -75,12 +79,9 @@ function reducer(state = initialState, action) {
       return { ...state, users: [...state.users]};  
 
       case "LOAD_CLIENT_DATA":
-    
 
       return { ...state, clientData: action.data};  
-
       case "GET_CLIENT_DATA":
-      
 
       return { ...state, clientData: state.clientData};  
 
@@ -168,6 +169,13 @@ sagaMiddleware.run(rootSaga);
 
 const history = syncHistoryWithStore(createHistory(), store);
 
+let dateStart = new Date()
+dateStart = dateStart.setDate(dateStart.getDate() - 110);
+let dateEnd = new Date()
+dateEnd =  dateEnd.setDate(dateEnd.getDate() - 100);
+const dateRange = [new Date(dateStart), new Date(dateEnd)]
+console.log(dateRange)
+store.dispatch(getClientData(dateRange));
 
 ReactDOM.render((    
 
@@ -184,4 +192,5 @@ ReactDOM.render((
 
     ), document.getElementById('root'))
 
-    
+
+export default store;

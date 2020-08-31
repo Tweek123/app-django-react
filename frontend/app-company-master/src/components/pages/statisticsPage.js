@@ -35,7 +35,9 @@ const headerStyles = {
   
 
 
-
+const now = new Date()
+const past = now.setDate(now.getDate() - 1);
+const dateRange = [new Date(past), now]
 
 class Statistics extends React.Component {
     constructor(props) {
@@ -45,10 +47,10 @@ class Statistics extends React.Component {
         };
 
       }
-
+      
     componentDidMount() {
 
-        this.props.dispatch(getClientData());
+      this.props.dispatch(getClientData(dateRange))
         
     }
 

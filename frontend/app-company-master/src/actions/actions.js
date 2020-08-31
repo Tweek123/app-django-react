@@ -2,7 +2,7 @@ export const addComment = (form, id) => ({ type: "ADD_COMMENT", formMessage: for
 export const refUsers = () => ({ type: "REF_USERS" });
 export const getUsers = () => ({ type: "GET_USERS" });
 export const refreshUsers = () => ({ type: "REFRESH_USERS"});
-export const getClientData = () => ({ type: "GET_CLIENT_DATA" });
+export const getClientData = (range) => ({ type: "GET_CLIENT_DATA", range: range });
 export const loadClientData = () => ({type: "LOAD_CLIENT_DATA"});
 export const authorization = (data) => ({type: "AUTH_USER", data: data});
 export const redirect = () => ({type: "USER_REDIRECT"});

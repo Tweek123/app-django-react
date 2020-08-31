@@ -3,6 +3,7 @@ import {Line} from 'react-chartjs-2';
 import { connect } from 'react-redux';
 import { DateRangePicker, Toggle } from 'rsuite';
 import 'rsuite/dist/styles/rsuite-default.css';
+import { getClientData } from '../actions/actions';
 
 const data5 = {
   labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
@@ -57,13 +58,13 @@ const options= {
                 year: 'YYYY',
               },
 
-              stepSize: 5
+              stepSize: 1000
             },
             
           }],       
           yAxes: [{
                      ticks: {
-                        max: 10,
+                        max: 110,
                         min: 0,
                         stepSize: 3
                       }
@@ -101,7 +102,10 @@ const options= {
 
 //   }
 
-
+  const now = new Date()
+  const past = now.setDate(now.getDate() - 1);
+  const dateRange = [new Date(past), now]
+  console.log(dateRange);
   const data30 = {
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
     pointDot: true,
@@ -195,7 +199,8 @@ class Chart extends React.Component {
     }
 
     componentDidMount() {
-
+      console.log(dateRange);
+      this.props.dispatch(getClientData(dateRange))
     }
 
     changeXScale(value) {
@@ -377,8 +382,7 @@ class Chart extends React.Component {
 
           
         this.prepareDataForChart();
-            
-
+          
         
         return (
           <div className="chart">
