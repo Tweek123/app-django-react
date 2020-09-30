@@ -64,6 +64,8 @@ INSTALLED_APPS = [
 
 AUTH_USER_MODEL = 'app_queue.User'
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -74,6 +76,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware
 ]
 CORS_ORIGIN_ALLOW_ALL = True
 ROOT_URLCONF = 'DjangoRest.urls'
