@@ -1,6 +1,6 @@
-export const rootServer = 'http://127.0.0.1:8000';
+export const rootServer = 'https://safe-meadow-35536.herokuapp.com';
 // export const rootHome = 'http://localhost:3000';
-export const rootHome = 'http://127.0.0.1:8000';
+export const rootHome = 'https://safe-meadow-35536.herokuapp.com';
 
 export const getClientData = `${rootServer}/getClientData/`;
 export const authUser = `${rootServer}/authUser/`;
