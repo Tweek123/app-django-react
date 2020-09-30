@@ -64,7 +64,7 @@ INSTALLED_APPS = [
 
 AUTH_USER_MODEL = 'app_queue.User'
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 MIDDLEWARE = [
@@ -106,6 +106,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'frontend','build'),
     os.path.join(BASE_DIR, 'frontend','build','static'),
     os.path.join(BASE_DIR, 'static','static'),
+    os.path.join(BASE_DIR, 'static','static','css'),
+    os.path.join(BASE_DIR, 'static','static','js'),
 ]
 
 STATICFILES_FINDERS = (
