@@ -64,7 +64,7 @@ INSTALLED_APPS = [
 
 AUTH_USER_MODEL = 'app_queue.User'
 
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 MIDDLEWARE = [
