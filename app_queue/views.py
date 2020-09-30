@@ -31,8 +31,6 @@ api_key = 'abcdef12345'
 # Create your views here.
 
 def index(request):
-    print(settings.REACT_APP_DIR)
-    print("\n")
     return render(request, "build/index.html")
 
 @csrf_exempt

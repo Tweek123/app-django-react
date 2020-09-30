@@ -32,7 +32,7 @@ REACT_APP_DIR = os.path.join(BASE_DIR, 'frontend')
 SECRET_KEY = 'up0fp+0w^eonaq0som7@go@8l8eujm3!)0*o&psc!b#=0+i4&&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -107,15 +107,12 @@ TEMPLATES = [
 WSGI_APPLICATION = 'DjangoRest.wsgi.application'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'frontend','build', 'static'),
+    os.path.join(BASE_DIR, 'frontend','build','static')
 ]
 
 STATICFILES_FINDERS = (
- 
 'django.contrib.staticfiles.finders.FileSystemFinder',
- 
 'django.contrib.staticfiles.finders.AppDirectoriesFinder',
- 
 )
 
 # Database
@@ -164,7 +161,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
-
 STATIC_ROOT = os.path.join(BASE_DIR,'static')
 STATIC_URL = '/static/'
 
