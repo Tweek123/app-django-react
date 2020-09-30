@@ -34,7 +34,7 @@ SECRET_KEY = 'up0fp+0w^eonaq0som7@go@8l8eujm3!)0*o&psc!b#=0+i4&&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*', 'safe-meadow-35536.herokuapp.com']
 
 REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': [
