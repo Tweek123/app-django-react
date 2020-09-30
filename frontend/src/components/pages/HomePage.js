@@ -3,6 +3,7 @@ import { Container, FlexboxGrid, Content} from 'rsuite';
 import FormLogin from "../forms/FormLogin"
 
 const HomePage = () => {
+
   return(
     <div className="show-fake-browser login-page"> 
         <Container>

@@ -5,7 +5,7 @@ import * as urls from '../../urls';
 import { Container, Header, Content} from 'rsuite';
 import Sidebar from '../Sidebar';
 import Chart from '../Chart';
-
+import { useHistory } from 'react-router-dom';
 
 
 
@@ -16,7 +16,8 @@ const StatisticsPage = () => {
 
   useEffect(() => {
     if(user && !user.name) {
-      dispatch(loadUserFromStorage())
+      console.log("?!??!");
+      // dispatch(loadUserFromStorage())
     }
   }, [user]);
 

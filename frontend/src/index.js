@@ -14,7 +14,7 @@ import store from './store';
 
 export const history = createBrowserHistory();
 
-
+console.log(history);
 ReactDOM.render((    
     <Provider store={store}>
         <Router history={history}>
