@@ -34,8 +34,6 @@ export function fetchGetClientData(data) {
  }
 
  export function fetchAuthUser(data) {
-      console.log(urls.authUser);
-      console.log(urls);
      return fetch(urls.authUser, {
         method: 'POST',
         mode: 'cors',
