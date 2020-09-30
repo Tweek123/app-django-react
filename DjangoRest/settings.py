@@ -96,7 +96,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'DjangoRest.wsgi.application'
+WSGI_APPLICATION = ''
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'frontend','build', 'static'),
