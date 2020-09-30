@@ -31,7 +31,7 @@ api_key = 'abcdef12345'
 # Create your views here.
 
 def index(request):
-    return render(request, "index.html")
+    return render(request, "build/index.html")
 
 @csrf_exempt
 def client_requests(request):

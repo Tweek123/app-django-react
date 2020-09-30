@@ -34,7 +34,7 @@ SECRET_KEY = 'up0fp+0w^eonaq0som7@go@8l8eujm3!)0*o&psc!b#=0+i4&&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*', 'safe-meadow-35536.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': [
@@ -86,7 +86,7 @@ CSRF_COOKIE_SECURE  = False
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'static')],
+        'DIRS': [os.path.join(BASE_DIR, 'frontend')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -102,7 +102,9 @@ TEMPLATES = [
 WSGI_APPLICATION = 'DjangoRest.wsgi.application'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'frontend','build')
+    os.path.join(BASE_DIR, 'frontend','build'),
+    os.path.join(BASE_DIR, 'frontend','build','static'),
+    os.path.join(BASE_DIR, 'static','static'),
 ]
 
 STATICFILES_FINDERS = (
