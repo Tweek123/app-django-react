@@ -11,5 +11,6 @@ urlpatterns = [
     path('removeUser/', views.remove_user_request),
     path('statistics/', views.get_page_requests),
     path('users/', views.get_page_requests),
+    path('getClients/', views.get_clients_request),
     path('', views.index, name="index")
 ]

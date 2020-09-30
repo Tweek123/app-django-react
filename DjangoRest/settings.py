@@ -19,9 +19,7 @@ USE_TZ = True
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-REACT_APP_DIR = os.path.join(BASE_DIR, 'frontend','app-company-master') 
-
-
+REACT_APP_DIR = os.path.join(BASE_DIR, 'frontend')
 
 # STATICFILES_DIRS=[(os.path.join(BASE_DIR,'static'))]
 
@@ -34,7 +32,7 @@ REACT_APP_DIR = os.path.join(BASE_DIR, 'frontend','app-company-master')
 SECRET_KEY = 'up0fp+0w^eonaq0som7@go@8l8eujm3!)0*o&psc!b#=0+i4&&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -64,7 +62,7 @@ INSTALLED_APPS = [
     'app_queue'
 ]
 
-# AUTH_USER_MODEL = 'app_queue.CustomUser'
+AUTH_USER_MODEL = 'app_queue.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -81,13 +79,11 @@ CORS_ORIGIN_ALLOW_ALL = True
 ROOT_URLCONF = 'DjangoRest.urls'
 SESSION_COOKIE_SECURE = False
 CSRF_COOKIE_SECURE  = False
-print(BASE_DIR)
-print(BASE_DIR)
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'frontend','app-company-master')],
+        'DIRS': [os.path.join(BASE_DIR, 'frontend')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -103,7 +99,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'DjangoRest.wsgi.application'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'frontend', 'app-company-master','build', 'static'),
+    os.path.join(BASE_DIR, 'frontend','build', 'static'),
 ]
 
 STATICFILES_FINDERS = (
@@ -119,14 +115,10 @@ STATICFILES_FINDERS = (
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'cewifpnp',
-        'USER': 'cewifpnp',
-        'PASSWORD': 'RKLKP2A2UhSHmG_XgwJIkhHHzbvaIMMr',
-        'HOST': 'balarama.db.elephantsql.com',
-        'PORT':  '5432'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'database'
     }
-}
+}  
 
 
 # Password validation
