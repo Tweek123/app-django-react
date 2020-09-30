@@ -86,7 +86,7 @@ CSRF_COOKIE_SECURE  = False
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'staticfiles')],
+        'DIRS': [os.path.join(BASE_DIR, 'static')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -102,8 +102,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'DjangoRest.wsgi.application'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'frontend','build'),
-    os.path.join(BASE_DIR, 'staticfiles','static')
+    os.path.join(BASE_DIR, 'frontend','build')
 ]
 
 STATICFILES_FINDERS = (
@@ -157,6 +156,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
-STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
-STATIC_URL = '/staticfiles/'
+STATIC_ROOT = os.path.join(BASE_DIR,'static')
+STATIC_URL = '/static/'
 
