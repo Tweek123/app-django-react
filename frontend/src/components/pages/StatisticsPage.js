@@ -16,7 +16,6 @@ const StatisticsPage = () => {
 
   useEffect(() => {
     if(user && !user.name) {
-      console.log("?!??!");
       // dispatch(loadUserFromStorage())
     }
   }, [user]);

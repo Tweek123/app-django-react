@@ -63,7 +63,7 @@ const initialState = {
       if(state.user) {
         state.user.url = window.location.href.replace(urls.rootHome,'');
       } else {
-        history.push('/'); 
+        history.push('/statistics'); 
       }
       return {...state}
 

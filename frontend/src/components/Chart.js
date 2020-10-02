@@ -127,7 +127,6 @@ const Chart = () => {
 
   useEffect(() => {
       if(client && client.name) {
-        console.log(client.range);
         dispatch(getClientData(
           {
             changeInterval: client.changeInterval,
@@ -140,7 +139,6 @@ const Chart = () => {
 
     useEffect(() => {
         setData(prepareChart(client.clientData, client.changeInterval));
-      
     },[client.clientData]);
   
   const getDate = (date) => {
