@@ -99,6 +99,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'DjangoRest.wsgi.application'
+X_FRAME_OPTIONS = 'ALLOWALL'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static','static'),
