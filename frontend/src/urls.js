@@ -1,6 +1,6 @@
-export const rootServer = "https://app-qeue.onrender.com/";
+export const rootServer = "https://app-qeue.onrender.com";
 // export const rootHome = 'http://localhost:3000';
-export const rootHome = "https://app-qeue.onrender.com/";
+export const rootHome = "https://app-qeue.onrender.com";
 
 export const getClientData = `${rootServer}/getClientData/`;
 export const authUser = `${rootServer}/authUser/`;
